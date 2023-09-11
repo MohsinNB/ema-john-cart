@@ -3,7 +3,7 @@ import './Cart.css';
 
 const Cart = (props) => {
     const { cart } = props
-    console.log(cart)
+    // console.log(cart)
 
     let Total = 0;
     let shipping = 0
@@ -16,7 +16,7 @@ const Cart = (props) => {
     const tax = Total * 0.05
     const fixTax = parseFloat(tax.toFixed(2))
     // toFixed property ta use hoise decimal er pore 2 ghor porjonto rakhar jonno.
-    
+    const grandTotal = Total + shipping + fixTax
     return (
         <div className='cart-component'>
             <h3>Order summary</h3>
@@ -24,7 +24,7 @@ const Cart = (props) => {
             <p>Total price: ${Total}</p>
             <p>Total shipping price:${shipping}</p>
             <p>Tax:${fixTax}</p>
-            <h4>Grand Total:</h4>
+            <h4>Grand Total: ${grandTotal}</h4>
         </div>
     );
 };
